@@ -108,7 +108,7 @@ function PageName({ data }) {
   const saveEditedData = (e) => {
     e.preventDefault();
     axios
-      .post("http://13.126.203.189:2000/storyData/updatePageData", {
+      .post("http://13.126.203.189:2000/api/storyData/updatePageData", {
         data: {
           jwtToken: userData.jwtToken,
           pageTitle: pageTitle,
