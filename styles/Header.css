@@ -1,0 +1,31 @@
+.sidebar-button-header{
+    background: none;
+    border:none;
+}
+@media(max-width:600px){
+    .headerbar-name-hide{
+        visibility: hidden;
+    }   
+}
+
+.profile-button{
+    background: none;
+    border: none;
+}
+
+.login-div{
+    position: absolute;
+    float: right;
+    width: 50vh;
+    top: 10vh;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin: 5px;
+    background-color: darkblue;
+}
+
+.input-login-div-userName{
+    width: 80%;
+    padding: 5px;
+}
