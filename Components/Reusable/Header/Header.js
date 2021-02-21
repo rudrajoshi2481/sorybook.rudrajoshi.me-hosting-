@@ -119,7 +119,7 @@ const LoginForm = ({ showLogin }) => {
   const loginUserFun = () => {
     console.log("Function worked");
     axios
-      .post("http://192.168.0.103:9000/api/useraccount/login", {
+      .post("http://13.126.203.189:2000/api/useraccount/login", {
         data: { userName, userPassword },
       })
       .then((reply) => {

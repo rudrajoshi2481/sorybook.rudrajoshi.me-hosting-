@@ -15,7 +15,7 @@ function admin() {
   const verifyAuth = (e) => {
     e.preventDefault();
     axios
-      .post("http://65.1.132.27/api/useraccount/login", { data: { userEmail: email, userPassword: passwd } })
+      .post("http://13.126.203.189:2000/api/useraccount/login", { data: { userEmail: email, userPassword: passwd } })
       .then((getData) => {
         console.log(getData.data.clientToken);
         console.log(getData.data.dataLogin);
