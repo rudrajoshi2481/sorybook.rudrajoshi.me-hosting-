@@ -53,7 +53,7 @@ export async function getServerSideProps(props) {
   let data = 'not Got '
 // http://65.1.132.27/api
    await axios.post(
-    "http://13.126.203.189:2000/api/storyData/getDataFromUrlTitle",
+    "http://api.storybook.rudrajoshi.me/api/storyData/getDataFromUrlTitle",
     {data:{pageTitle:props.params.name}}
   ).then(res => {
     console.log(res);
@@ -94,7 +94,7 @@ function PageName({ data }) {
   const pageDeleteButton = () => {
     // localhost:9000/api/storyData/deletePage
     axios
-      .post("http://13.126.203.189:2000/api/storyData/deletePage", {
+      .post("http://api.storybook.rudrajoshi.me/api/storyData/deletePage", {
         data: { pageId: pageId, jwtToken: userData.jwtToken },
       })
       .then((rep) => {
@@ -108,7 +108,7 @@ function PageName({ data }) {
   const saveEditedData = (e) => {
     e.preventDefault();
     axios
-      .post("http://13.126.203.189:2000/api/storyData/updatePageData", {
+      .post("http://api.storybook.rudrajoshi.me/api/storyData/updatePageData", {
         data: {
           jwtToken: userData.jwtToken,
           pageTitle: pageTitle,

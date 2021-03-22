@@ -15,7 +15,7 @@ function Sidebar() {
   const sidebardataFetch = () => {
     // http://13.126.203.189:2000/api/getStoriesList/getBookList
     axios
-      .get("http://13.126.203.189:2000/api/getStoriesList/getBookList", {
+      .get("http://api.storybook.rudrajoshi.me/api/getStoriesList/getBookList", {
         data: { jwtToken: userData.jwtToken },
       })
       .then((res) => {
@@ -33,7 +33,7 @@ function Sidebar() {
 
   const createNewBook = () => {
     axios
-      .post("http://13.126.203.189:2000/api/storyData/createBook", {
+      .post("http://api.storybook.rudrajoshi.me/api/storyData/createBook", {
         data: {
           jwtToken: userData.jwtToken,
           bookTitle: "Default name",
@@ -223,7 +223,7 @@ const Cardstories = ({ bookId, bookTitle, pages, getPageList, reload }) => {
                 console.log("SAVE CLICKED");
                 console.log(bookTitle, inputTitleValue);
                 axios
-                  .post("http://13.126.203.189:2000/api/storyData/updateBookTitle", {
+                  .post("http://api.storybook.rudrajoshi.me/api/storyData/updateBookTitle", {
                     data: {
                       bookId: bookId,
                       bookTitle: inputTitleValue,
@@ -283,7 +283,7 @@ const Cardstories = ({ bookId, bookTitle, pages, getPageList, reload }) => {
               onClick={(e) => {
                 console.log("Gone");
                 axios
-                  .post("http://13.126.203.189:2000/api/storyData/deleteBook", {
+                  .post("http://api.storybook.rudrajoshi.me/api/storyData/deleteBook", {
                     data: { bookId: bookId ,jwtToken:userData.jwtToken},
                   })
                   .then((res) => console.log(res, "DELETE BOOK"))
@@ -320,7 +320,7 @@ const Cardstories = ({ bookId, bookTitle, pages, getPageList, reload }) => {
               onClick={(e) => {
                 console.log("Gone");
                 axios
-                  .post("http://13.126.203.189:2000/api/storyData/createPage", {
+                  .post("http://api.storybook.rudrajoshi.me/api/storyData/createPage", {
                     data: {
                       jwtToken:userData.jwtToken,
                       bookId: bookId,
